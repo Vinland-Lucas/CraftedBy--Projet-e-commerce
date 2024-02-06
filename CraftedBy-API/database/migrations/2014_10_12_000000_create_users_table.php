@@ -19,8 +19,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('address');
-            // $table->foreignUuid('zip_code_id')->constrained();
-            // $table->foreignUuid('city_id')->constrained();
+            $table->foreignUuid('zip_code_id')->references('id')->on('zip_code');
+            $table->foreignUuid('city_id')->constrained();
             $table->timestamps();
             $table->rememberToken();
 
