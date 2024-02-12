@@ -16,6 +16,11 @@ class Zip_Code extends Model
         return $this->hasMany(User::class);
     }
 
+    public function businesses(): HasMany
+    {
+        return $this->hasMany(Business::class);
+    }
+
     protected $fillable = [
         'number'
     ];
