@@ -38,6 +38,11 @@ class Business extends Model
         return $this->belongsToMany(Speciality::class);
     }
 
+    public function theme(): BelongsTo
+    {
+        return $this->belongsTo(Theme::class);
+    }
+
     protected $fillable = [
         'name',
         'description',
