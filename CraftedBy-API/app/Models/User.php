@@ -27,6 +27,11 @@ class User extends Model
         return $this->belongsTo(Zip_Code::class);
     }
 
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
