@@ -22,6 +22,11 @@ class Business extends Model
         return $this->belongsTo(Zip_Code::class);
     }
 
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
     protected $fillable = [
         'name',
         'description',
