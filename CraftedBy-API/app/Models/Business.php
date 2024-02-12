@@ -33,6 +33,11 @@ class Business extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function specialities(): BelongsToMany
+    {
+        return $this->belongsToMany(Speciality::class);
+    }
+
     protected $fillable = [
         'name',
         'description',
