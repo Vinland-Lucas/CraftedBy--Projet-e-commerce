@@ -32,6 +32,11 @@ class User extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function businesses(): BelongsToMany
+    {
+        return $this->belongsToMany(Business::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
