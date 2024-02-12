@@ -16,6 +16,11 @@ class Product extends Model
         return $this->belongsTo(Business::class);
     }
 
+    public function color(): BelongsTo
+    {
+        return $this->belongsTo(Color::class);
+    }
+
     protected $fillable = [
         // 'business_id',
         'name',
