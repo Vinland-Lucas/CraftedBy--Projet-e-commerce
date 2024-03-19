@@ -36,6 +36,11 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function size(): BelongsTo
+    {
+        return $this->belongsTo(Size::class);
+    }
+
     protected $fillable = [
         // 'business_id',
         'name',
