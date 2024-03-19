@@ -26,6 +26,11 @@ class Product extends Model
         return $this->belongsTo(Style::class);
     }
 
+    public function material(): BelongsTo
+    {
+        return $this->belongsTo(Material::class);
+    }
+
     protected $fillable = [
         // 'business_id',
         'name',
