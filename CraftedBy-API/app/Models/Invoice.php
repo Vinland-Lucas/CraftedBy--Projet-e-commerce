@@ -19,7 +19,7 @@ class Invoice extends Model
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot('product_quantity');
     }
 
     protected $fillable = [
