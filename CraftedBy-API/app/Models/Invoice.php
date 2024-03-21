@@ -22,6 +22,11 @@ class Invoice extends Model
         return $this->belongsToMany(Product::class)->withPivot('product_quantity');
     }
 
+    public function statutes(): BelongsToMany
+    {
+        return $this->belongsToMany(Status::class);
+    }
+
     protected $fillable = [
         // 'customer_id'
     ];
