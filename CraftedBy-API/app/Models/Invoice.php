@@ -24,7 +24,7 @@ class Invoice extends Model
 
     public function statutes(): BelongsToMany
     {
-        return $this->belongsToMany(Status::class);
+        return $this->belongsToMany(Status::class)->withTimestamps();
     }
 
     protected $fillable = [
