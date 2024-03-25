@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Theme;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,6 +17,8 @@ class BusinessFactory extends Factory
      */
     public function definition(): array
     {
+        $theme_id = Theme::all('id')->random();
+
         return [
             'name' => fake()->company(),
             'description' => fake()->text(),
@@ -23,7 +26,9 @@ class BusinessFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'address' => fake()->address(),
-            'logo' => fake()->image()
+            'speciality' => fake()->word(),
+            'logo' => fake()->image(),
+            'theme_id' => $theme_id
         ];
     }
 }

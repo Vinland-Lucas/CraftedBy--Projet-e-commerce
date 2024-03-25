@@ -17,6 +17,7 @@ class ThemeFactory extends Factory
     public function definition(): array
     {
         return [
+            'name' => fake()->word(),
             'layer' => fake()->word(),
             'color_hex_1' => fake()->hexColor(),
             'color_hex_2' => fake()->hexColor()

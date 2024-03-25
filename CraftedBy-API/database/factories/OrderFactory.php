@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Material>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order>
  */
-class MaterialFactory extends Factory
+class OrderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,8 +17,11 @@ class MaterialFactory extends Factory
      */
     public function definition(): array
     {
+        $customer_id = User::all('id')->random();
+
         return [
-            'name' => fake()->word()
+            'customer_id' => $customer_id,
+            'status' => fake()->word()
         ];
     }
 }
