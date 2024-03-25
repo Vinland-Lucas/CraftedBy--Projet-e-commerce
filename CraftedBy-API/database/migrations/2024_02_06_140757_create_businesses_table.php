@@ -19,9 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('address');
+            $table->string('speciality');
             $table->string('logo');
-            $table->foreignUuid('zip_code_id')->references('id')->on('zip_code');
-            $table->foreignUuid('city_id')->constrained();
             $table->foreignUuid('theme_id')->constrained();
             $table->timestamps();
         });

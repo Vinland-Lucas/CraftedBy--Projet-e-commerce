@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invoice_status', function (Blueprint $table) {
-            $table->foreignUuid('invoice_id')->constrained();
-            $table->foreignUuid('status_id')->references('id')->on('statutes');
+        Schema::create('order_product', function (Blueprint $table) {
+            $table->foreignUuid('order_id')->constrained();
+            $table->foreignUuid('product_id')->constrained();
+            $table->integer('product_quantity')->unsigned();
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invoice_status');
+        Schema::dropIfExists('order_product');
     }
 };

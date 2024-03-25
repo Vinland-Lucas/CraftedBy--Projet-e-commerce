@@ -17,14 +17,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->float('price');
-            $table->foreignUuid('size_id')->constrained();
-            $table->foreignUuid('category_id')->constrained();
-            $table->foreignUuid('material_id')->constrained();
-            $table->foreignUuid('style_id')->constrained();
-            $table->foreignUuid('color_id')->constrained();
-            $table->integer('stock_quantity')->unsigned();
+            $table->string('size');
+            $table->string('category');
+            $table->string('material');
+            $table->string('style');
+            $table->string('color');
             $table->string('image');
             $table->boolean('active');
+            $table->integer('stock_quantity')->unsigned();
             $table->timestamps();
         });
     }
