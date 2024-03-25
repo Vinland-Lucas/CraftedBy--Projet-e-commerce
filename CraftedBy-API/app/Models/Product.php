@@ -17,34 +17,9 @@ class Product extends Model
         return $this->belongsTo(Business::class);
     }
 
-    public function color(): BelongsTo
+    public function orders(): BelongsToMany
     {
-        return $this->belongsTo(Color::class);
-    }
-
-    public function style(): BelongsTo
-    {
-        return $this->belongsTo(Style::class);
-    }
-
-    public function material(): BelongsTo
-    {
-        return $this->belongsTo(Material::class);
-    }
-
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function size(): BelongsTo
-    {
-        return $this->belongsTo(Size::class);
-    }
-
-    public function invoices(): BelongsToMany
-    {
-        return $this->belongsToMany(Invoice::class);
+        return $this->belongsToMany(Order::class);
     }
 
     protected $fillable = [
@@ -52,13 +27,13 @@ class Product extends Model
         'name',
         'description',
         'price',
-        // 'size_id',
-        // 'category_id',
-        // 'material_id',
-        // 'style_id',
-        // 'color_id',
-        'stock_quantity',
+         'size',
+         'category',
+         'material',
+         'style',
+         'color',
         'image',
         'active',
+        'stock_quantity',
     ];
 }

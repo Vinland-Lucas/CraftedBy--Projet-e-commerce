@@ -17,6 +17,7 @@ class Theme extends Model
     }
 
     protected $fillable = [
+        'name',
         'layer',
         'color_hex_1',
         'color_hex_2',

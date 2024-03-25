@@ -18,29 +18,14 @@ class User extends Model
 {
     use HasApiTokens, HasFactory, Notifiable, HasUuids;
 
-    public function roles(): BelongsToMany
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
-    public function zip_code(): BelongsTo
-    {
-        return $this->belongsTo(Zip_Code::class);
-    }
-
-    public function city(): BelongsTo
-    {
-        return $this->belongsTo(City::class);
-    }
-
     public function businesses(): BelongsToMany
     {
         return $this->belongsToMany(Business::class);
     }
 
-    public function invoices(): HasMany
+    public function orders(): HasMany
     {
-        return $this->hasMany(Invoice::class, 'customer_id');
+        return $this->hasMany(Order::class, 'customer_id');
     }
 
     /**
@@ -54,6 +39,7 @@ class User extends Model
         'email',
         'password',
         'address',
+        'roles'
         // 'zip_code_id',
         // 'city_id'
     ];

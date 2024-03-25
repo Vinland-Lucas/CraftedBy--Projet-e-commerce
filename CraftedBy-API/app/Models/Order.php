@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Invoice extends Model
+class Order extends Model
 {
     use HasFactory, HasUuids;
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'customer_id');
+        return $this->belongsTo(User::class);
     }
 
     public function products(): BelongsToMany
@@ -22,12 +22,8 @@ class Invoice extends Model
         return $this->belongsToMany(Product::class)->withPivot('product_quantity');
     }
 
-    public function statutes(): BelongsToMany
-    {
-        return $this->belongsToMany(Status::class)->withTimestamps();
-    }
-
     protected $fillable = [
-        // 'customer_id'
+//        'customer_id',
+        'status'
     ];
 }

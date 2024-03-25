@@ -18,24 +18,9 @@ class Business extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function zip_code(): BelongsTo
-    {
-        return $this->belongsTo(Zip_Code::class);
-    }
-
-    public function city(): BelongsTo
-    {
-        return $this->belongsTo(City::class);
-    }
-
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
-    }
-
-    public function specialities(): BelongsToMany
-    {
-        return $this->belongsToMany(Speciality::class);
     }
 
     public function theme(): BelongsTo
@@ -49,10 +34,11 @@ class Business extends Model
         'history',
         'email',
         'address',
+        'speciality',
         'logo',
+        // 'theme_id',
         // 'zip_code_id',
         // 'city_id',
-        // 'theme_id',
     ];
 
     /**
