@@ -17,10 +17,10 @@ class OrderFactory extends Factory
      */
     public function definition(): array
     {
-        $customer_id = User::all('id')->random();
+//        $customer_id = User::all()->random()->id;
 
         return [
-            'customer_id' => $customer_id,
+            'user_id' => User::all()->random()->id,
             'status' => fake()->word()
         ];
     }
