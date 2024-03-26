@@ -36,7 +36,7 @@ class Business extends Model
         'address',
         'speciality',
         'logo',
-        // 'theme_id',
+         'theme_id',
         // 'zip_code_id',
         // 'city_id',
     ];
