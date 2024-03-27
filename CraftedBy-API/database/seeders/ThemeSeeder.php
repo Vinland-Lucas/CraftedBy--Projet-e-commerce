@@ -3,21 +3,20 @@
 namespace Database\Seeders;
 
 use App\Models\Business;
-use App\Models\Order;
-use App\Models\User;
+use App\Models\Theme;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class ThemeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        User::factory()
-                ->count(3)
-//                ->has(Business::factory(), Order::factory())
-                ->create();
+        Theme::factory()
+                    ->count(3)
+//                    ->has(Business::factory())
+                    ->create();
     }
 }
