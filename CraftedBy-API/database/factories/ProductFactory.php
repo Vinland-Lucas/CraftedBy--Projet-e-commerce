@@ -17,7 +17,7 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $business_id = Business::all('id')->random();
+        $business_id = Business::all()->random()->id;
 
         return [
             'business_id' => $business_id,

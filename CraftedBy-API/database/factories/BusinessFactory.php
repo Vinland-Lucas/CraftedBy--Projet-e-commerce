@@ -17,7 +17,6 @@ class BusinessFactory extends Factory
      */
     public function definition(): array
     {
-        $theme_id = Theme::all('id')->random();
 
         return [
             'name' => fake()->company(),
@@ -28,7 +27,7 @@ class BusinessFactory extends Factory
             'address' => fake()->address(),
             'speciality' => fake()->word(),
             'logo' => fake()->image(),
-            'theme_id' => $theme_id
+            'theme_id' => Theme::all()->random()->id
         ];
     }
 }
